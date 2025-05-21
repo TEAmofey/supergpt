@@ -1,0 +1,109 @@
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #1e1e1e;
+  --text-light: #000000;
+  --text-dark: #f5f5f5;
+  --button-bg-light: #f5f5f5;
+  --button-bg-dark: #2c2c2c;
+  --button-hover-light: #e0e0e0;
+  --button-hover-dark: #3a3a3a;
+  --border-light: #dcdcdc;
+  --border-dark: #444;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.popup-container {
+  padding: 16px;
+  width: 240px;
+  border-radius: 12px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.gear-icon {
+  text-decoration: none;
+  color: inherit;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+  }
+
+  .popup-container {
+    background-color: var(--bg-light);
+  }
+
+  button {
+    background-color: var(--button-bg-light);
+    color: var(--text-light);
+    border: 1px solid var(--border-light);
+  }
+
+  button:hover {
+    background-color: var(--button-hover-light);
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+  }
+
+  .popup-container {
+    background-color: var(--bg-dark);
+  }
+
+  button {
+    background-color: var(--button-bg-dark);
+    color: var(--text-dark);
+    border: 1px solid var(--border-dark);
+  }
+
+  button:hover {
+    background-color: var(--button-hover-dark);
+  }
+
+  .gear-icon {
+    color: var(--text-dark);
+  }
+}
+
+button {
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+  text-align: left;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border: 1px solid transparent;
+}

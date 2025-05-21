@@ -1,0 +1,55 @@
+{
+   "action": {
+      "128": "images/icon-128.png",
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png",
+      "default_popup": "popup.html"
+   },
+   "background": {
+      "service_worker": "scripts/background/background.js"
+   },
+   "commands": {
+      "_execute_action": {
+         "suggested_key": {
+            "default": "Ctrl+Shift+U",
+            "mac": "Command+Shift+U"
+         }
+      }
+   },
+   "content_scripts": [ {
+      "js": [ "scripts/content/browser.js" ],
+      "matches": [ "https://chat.openai.com/*", "https://chatgpt.com/*", "https://ai.com/*", "https://sora.com/*", "https://chat.com/*", "https://claude.ai/*", "https://oaistatic.com/*" ],
+      "run_at": "document_start",
+      "world": "MAIN"
+   }, {
+      "js": [ "scripts/content/loadScript.js" ],
+      "matches": [ "https://chat.openai.com/*", "https://chatgpt.com/*", "https://ai.com/*", "https://sora.com/*", "https://chat.com/*", "https://claude.ai/*", "https://oaistatic.com/*" ],
+      "run_at": "document_start"
+   }, {
+      "css": [ "scripts/styles/global.css", "scripts/styles/katex.css" ],
+      "js": [ "scripts/thirdParty/FileSaver.js", "scripts/thirdParty/jszip.js", "scripts/thirdParty/katex.js", "scripts/thirdParty/texmath.js", "scripts/thirdParty/markdown-it-sup.js", "scripts/thirdParty/markdown-it.js", "scripts/thirdParty/highlight.js", "scripts/thirdParty/sortable.js", "scripts/content/pdfStyles.js", "scripts/content/translation.js", "scripts/content/sortByList.js", "scripts/content/toneList.js", "scripts/content/writingStyleList.js", "scripts/content/languageList.js", "scripts/content/reportReasonList.js", "scripts/content/backupModels.js", "scripts/content/api.js", "scripts/content/global.js", "scripts/content/navigation.js", "scripts/content/observers.js", "scripts/content/canvas.js", "scripts/content/audio.js", "scripts/content/sidebar.js", "scripts/content/promptInput.js", "scripts/content/gizmoDiscovery.js", "scripts/content/gizmoAbout.js", "scripts/content/upgrademodal.js", "scripts/content/fetchEventListeners.js", "scripts/content/imageGalleryMenu.js", "scripts/content/imageGallery.js", "scripts/content/rowAssistant.js", "scripts/content/rowUser.js", "scripts/content/quickAccessMenu.js", "scripts/content/newChatPage.js", "scripts/content/promptEditor.js", "scripts/content/keyboardShortcuts.js", "scripts/content/notes.js", "scripts/content/noteSettingsMenu.js", "scripts/content/sidebarFolders.js", "scripts/content/dropdown.js", "scripts/content/templateWordsModal.js", "scripts/content/shareModal.js", "scripts/content/instructions.js", "scripts/content/navbar.js", "scripts/content/modal.js", "scripts/content/minimap.js", "scripts/content/announcement.js", "scripts/content/releaseNote.js", "scripts/content/newsletterList.js", "scripts/content/continue.js", "scripts/content/export.js", "scripts/content/splitter.js", "scripts/content/modelSwitcher.js", "scripts/content/manager.js", "scripts/content/managerSidebarSettingsMenu.js", "scripts/content/customInstructionProfileManager.js", "scripts/content/customInstructionProfileEditor.js", "scripts/content/conversationManager.js", "scripts/content/conversationManagerFolderMenu.js", "scripts/content/conversationManagerCardMenu.js", "scripts/content/conversationManagerSidebarSettingsMenu.js", "scripts/content/pinnedMessageManager.js", "scripts/content/promptManager.js", "scripts/content/promptManagerFolderMenu.js", "scripts/content/promptManagerCardMenu.js", "scripts/content/promptManagerSidebarSettingsMenu.js", "scripts/content/settings.js", "scripts/content/conversation.js", "scripts/content/conversationPreview.js", "scripts/content/moveConvToFolder.js", "scripts/content/moveConvFolder.js", "scripts/content/movePromptToFolder.js", "scripts/content/movePromptFolder.js", "scripts/content/initialize.js" ],
+      "matches": [ "https://chat.openai.com/*", "https://chatgpt.com/*", "https://ai.com/*", "https://sora.com/*", "https://chat.com/*", "https://claude.ai/*", "https://oaistatic.com/*" ],
+      "run_at": "document_end"
+   } ],
+   "default_locale": "en",
+   "description": "ChatGPT with Superpowers! Folders, Search, GPT Store, Image Gallery, Voice GPT, Export, Custom Prompts, Prompt Chains, Hidden Models",
+   "host_permissions": [ "https://chat.openai.com/*", "https://chatgpt.com/*", "https://ai.com/*", "https://sora.com/*", "https://chat.com/*", "https://claude.ai/*", "https://oaistatic.com/*" ],
+   "icons": {
+      "128": "images/icon-128.png",
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzG6ZR+j3lpHF0XrDLIXdrk25idObfq+RK7WM+pIaQmDO2nM5Y+SZJJbFwyxjWX+3V6XOgS5v9Lpnqg46OJ/W9Q5i23Usx1MXgaJBTlEFz0XG+PYK6BElhc9itS7m6oCLknin97a533tusXmm8zW7kaDGy8vycMDY6Ffbqa3sn0PqZ8bXUlAjgO91dQcB8EtlT906hwhZjtfEYvp2hdxYkRFxfuaR1WMLkxttVXv506RXJowxq0LO3aqj83QeJoXkQF1wbzCxYO1VpVGEmYIQxIKw/csusZNZs8gwJrIWtOzhMgDNOFzXNeZl0ASgoj2M9UsZp+Dunn57VT8tQyaE6QIDAQAB",
+   "manifest_version": 3,
+   "name": "Superpower ChatGPT",
+   "optional_permissions": [ "activeTab", "tabs" ],
+   "permissions": [ "storage", "unlimitedStorage", "contextMenus" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "7.3.13",
+   "web_accessible_resources": [ {
+      "matches": [ "https://chat.openai.com/*", "https://chatgpt.com/*", "https://ai.com/*", "https://sora.com/*", "https://chat.com/*", "https://claude.ai/*", "https://oaistatic.com/*" ],
+      "resources": [ "_locales/*", "icons/*", "images/*", "sounds/*", "scripts/content/*" ]
+   } ]
+}
